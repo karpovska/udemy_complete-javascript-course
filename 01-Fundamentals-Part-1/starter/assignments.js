@@ -5,7 +5,7 @@
 
 const country = "Ukraine";
 const continent = "Europe";
-let population = 38000000;
+let population = 42;
 console.log(country, continent, population);
 
 // LECTURE: Data Types
@@ -154,3 +154,45 @@ if (language === "English" && population < 50000000 && country !== "Island") {
 } else {
   console.log(`${country} does not meet your criteria :(`);
 }
+
+// LECTURE: The switch Statement
+// 1. Use a switch statement to log the following string for the given 'language':
+// chinese or mandarin: 'MOST number of native speakers!'
+// spanish: '2nd place in number of native speakers'
+// english: '3rd place'
+// hindi: 'Number 4'
+// arabic: '5th most spoken language'
+// for all other simply log 'Great language too :D
+
+switch (language) {
+  case "Chinese":
+  case "Mandarin":
+    console.log("MOST number of native speakers!");
+    break;
+  case "Spanish":
+    console.log("2nd place in number of native speakers");
+    break;
+  case "English":
+    console.log("3rd place");
+    break;
+  case "Hindi":
+    console.log("Number 4");
+    break;
+  case "Arabic":
+    console.log("5th most spoken language");
+    break;
+  default:
+    console.log("Great language too!");
+}
+
+// LECTURE: The Conditional (Ternary) Operator
+// 1. If your country's population is greater than 33 million, use the ternary operator
+// to log a string like this to the console: 'Portugal's population is above average'.
+// Otherwise, simply log 'Portugal's population is below average'. Notice how only
+// one word changes between these two sentences!
+// 2. After checking the result, change the population temporarily to 13 and then to
+// 130. See the different results, and set the population back to original
+
+population > 33
+  ? console.log(`${country}'s population is above everage`)
+  : console.log(`${country}'s population is below average`);
