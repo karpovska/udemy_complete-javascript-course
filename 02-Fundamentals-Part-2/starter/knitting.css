@@ -1,0 +1,50 @@
+/* Styles for header */
+header {
+    background-color: #F5F5F5;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 48px;
+    margin-top: 0;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #FF8C00;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #FFA500;
+  }
+  
+  /* Styles for sections */
+  section {
+    margin: 50px 0;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5em;
+  }
+  
+  /* Styles for button in last section */
+  section:last-of-type button {
+    background-color: #4CAF50;
+  }
+  
+  section:last-of-type button:hover {
+    background-color: #3E8E41;
+  }
