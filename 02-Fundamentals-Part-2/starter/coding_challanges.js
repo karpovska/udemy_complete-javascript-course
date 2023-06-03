@@ -34,4 +34,4 @@ function checkWinner(avgDolphins, avgKoalas) {
   }
 }
 
-console.log(checkWinner(avgDolphins, avgKoalas));
+checkWinner(avgDolphins, avgKoalas);
