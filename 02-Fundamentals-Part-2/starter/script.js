@@ -168,3 +168,71 @@ console.log(
 // and a capital called Helsinki.'
 // 2. Increase the country's population by two million using dot notation, and then
 // decrease it by two million using brackets notation
+
+console.log(
+  `${country.country} has ${country.population} million ${country.language}-speaking people, ${country.neighbours.length} neighbouring countries and a capital called ${country.capital}`
+);
+country.population = country.population + 2;
+console.log(country.population);
+
+country["population"] = country["population"] - 2;
+console.log(country.population);
+
+const oksana = {
+  firstName: "Oksana",
+  secondName: "Karpova",
+  birthYear: 1988,
+  job: "frontend developer",
+  friends: ["Ania", "Svitlana", "Agata", "Liuda"],
+  hasDriverLicense: true,
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and she has ${this.hasDriverLicense ? "a" : "no"} driver's license`;
+  },
+};
+
+oksana.calcAge();
+console.log(oksana.age);
+console.log(oksana.getSummary());
+
+// LECTURE: Object Methods
+// 1. Add a method called 'describe' to the 'myCountry' object. This method
+// will log a string to the console, similar to the string logged in the previous
+// assignment, but this time using the 'this' keyword.
+// 2. Call the 'describe' method
+// 3. Add a method called 'checkIsland' to the 'myCountry' object. This
+// method will set a new property on the object, called 'isIsland'.
+// 'isIsland' will be true if there are no neighbouring countries, and false if
+// there are. Use the ternary operator to set the property.
+
+const nativeCountry = {
+  country: "Ukraine",
+  capital: "Kyiv",
+  language: "Ukrainian",
+  population: 42,
+  neighbours: [
+    "Poland",
+    "Moldova",
+    "Slovakia",
+    "Hungary",
+    "Romania",
+    "belarus",
+    "error, not found",
+  ],
+  describe: function () {
+    return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`;
+  },
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length == 0 ? true : false;
+    return this.isIsland;
+  },
+};
+
+console.log(nativeCountry.describe());
+console.log(nativeCountry.checkIsland());
+console.log(nativeCountry.isIsland);
