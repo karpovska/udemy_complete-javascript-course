@@ -9,7 +9,7 @@
 // returned values in 3 different variables, and log them to the console
 
 function describeCountry(country, population, capitalCity) {
-  return `${country} has ${population} people and its capital is ${capitalCity}.`;
+	return `${country} has ${population} people and its capital is ${capitalCity}.`;
 }
 
 const myCountry = describeCountry("Ukraine", "42 million", "Kyiv");
@@ -30,7 +30,7 @@ console.log(myCountry);
 // the same populations)
 
 function percentageOfWorld1(population) {
-  return (population * 100) / 7900;
+	return (population * 100) / 7900;
 }
 
 const p1 = percentageOfWorld1(42);
@@ -40,7 +40,7 @@ const p3 = percentageOfWorld1(500);
 console.log(p1, p2, p3);
 
 const percentage = function (population) {
-  return (population * 100) / 7900;
+	return (population * 100) / 7900;
 };
 
 const x1 = percentage(42);
@@ -53,8 +53,7 @@ console.log(x1, x2, x3);
 // 1. Recreate the last assignment, but this time create an arrow function called
 // 'percentageOfWorld3'
 
-const percentageOfWorld3 = (population) =>
-  ((population * 100) / 7900).toFixed(2);
+const percentageOfWorld3 = (population) => ((population * 100) / 7900).toFixed(2);
 console.log(percentageOfWorld3(500));
 
 // LECTURE: Functions Calling Other Functions
@@ -67,8 +66,8 @@ console.log(percentageOfWorld3(500));
 // 3. Call 'describePopulation' with data for 3 countries of your choice
 
 function describePopulation(country, population) {
-  const percentage = percentageOfWorld3(population);
-  return `${country} has ${population} million people, which is about ${percentage} of the world`;
+	const percentage = percentageOfWorld3(population);
+	return `${country} has ${population} million people, which is about ${percentage} of the world`;
 }
 
 console.log(describePopulation("China", 1441));
@@ -86,10 +85,10 @@ console.log(describePopulation("China", 1441));
 const populations = [320, 46, 12, 25];
 console.log(populations.length === 4);
 const percentages = [
-  percentageOfWorld1(populations[0]),
-  percentageOfWorld1(populations[1]),
-  percentageOfWorld1(populations[2]),
-  percentageOfWorld1(populations[3]),
+	percentageOfWorld1(populations[0]),
+	percentageOfWorld1(populations[1]),
+	percentageOfWorld1(populations[2]),
+	percentageOfWorld1(populations[3]),
 ];
 console.log(percentages);
 
@@ -108,19 +107,11 @@ console.log(percentages);
 // change the array at that index position. For example, you can search for
 // 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
 
-const neighbours = [
-  "Poland",
-  "Moldova",
-  "Slovakia",
-  "Hungary",
-  "Romania",
-  "belarus",
-  "russia",
-];
+const neighbours = ["Poland", "Moldova", "Slovakia", "Hungary", "Romania", "belarus", "russia"];
 neighbours.push("Utopia");
 neighbours.pop();
 if (!neighbours.includes("Germany")) {
-  console.log("Probably not a central European country");
+	console.log("Probably not a central European country");
 }
 
 const index = neighbours.indexOf("russia");
@@ -133,34 +124,24 @@ console.log(neighbours);
 // 'neighbours' (an array like we used in previous assignments)
 
 const country = {
-  country: "Ukraine",
-  capital: "Kyiv",
-  language: "Ukrainian",
-  population: 42,
-  neighbours: [
-    "Poland",
-    "Moldova",
-    "Slovakia",
-    "Hungary",
-    "Romania",
-    "belarus",
-    "error, not found",
-  ],
+	country: "Ukraine",
+	capital: "Kyiv",
+	language: "Ukrainian",
+	population: 42,
+	neighbours: ["Poland", "Moldova", "Slovakia", "Hungary", "Romania", "belarus", "error, not found"],
 };
 
 console.log(country);
 
 const jonas = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
-  age: 2037 - 1991,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
+	firstName: "Jonas",
+	lastName: "Schmedtmann",
+	age: 2037 - 1991,
+	job: "teacher",
+	friends: ["Michael", "Peter", "Steven"],
 };
 
-console.log(
-  `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`
-);
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`);
 
 // LECTURE: Dot vs. Bracket Notation
 // 1. Using the object from the previous assignment, log a string like this to the
@@ -170,7 +151,7 @@ console.log(
 // decrease it by two million using brackets notation
 
 console.log(
-  `${country.country} has ${country.population} million ${country.language}-speaking people, ${country.neighbours.length} neighbouring countries and a capital called ${country.capital}`
+	`${country.country} has ${country.population} million ${country.language}-speaking people, ${country.neighbours.length} neighbouring countries and a capital called ${country.capital}`
 );
 country.population = country.population + 2;
 console.log(country.population);
@@ -179,21 +160,21 @@ country["population"] = country["population"] - 2;
 console.log(country.population);
 
 const oksana = {
-  firstName: "Oksana",
-  secondName: "Karpova",
-  birthYear: 1988,
-  job: "frontend developer",
-  friends: ["Ania", "Svitlana", "Agata", "Liuda"],
-  hasDriverLicense: true,
-  calcAge: function () {
-    this.age = 2023 - this.birthYear;
-    return this.age;
-  },
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${
-      this.job
-    }, and she has ${this.hasDriverLicense ? "a" : "no"} driver's license`;
-  },
+	firstName: "Oksana",
+	secondName: "Karpova",
+	birthYear: 1988,
+	job: "frontend developer",
+	friends: ["Ania", "Svitlana", "Agata", "Liuda"],
+	hasDriverLicense: true,
+	calcAge: function () {
+		this.age = 2023 - this.birthYear;
+		return this.age;
+	},
+	getSummary: function () {
+		return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and she has ${
+			this.hasDriverLicense ? "a" : "no"
+		} driver's license`;
+	},
 };
 
 oksana.calcAge();
@@ -211,28 +192,53 @@ console.log(oksana.getSummary());
 // there are. Use the ternary operator to set the property.
 
 const nativeCountry = {
-  country: "Ukraine",
-  capital: "Kyiv",
-  language: "Ukrainian",
-  population: 42,
-  neighbours: [
-    "Poland",
-    "Moldova",
-    "Slovakia",
-    "Hungary",
-    "Romania",
-    "belarus",
-    "error, not found",
-  ],
-  describe: function () {
-    return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`;
-  },
-  checkIsland: function () {
-    this.isIsland = this.neighbours.length == 0 ? true : false;
-    return this.isIsland;
-  },
+	country: "Ukraine",
+	capital: "Kyiv",
+	language: "Ukrainian",
+	population: 42,
+	neighbours: ["Poland", "Moldova", "Slovakia", "Hungary", "Romania", "belarus", "error, not found"],
+	describe: function () {
+		return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}`;
+	},
+	checkIsland: function () {
+		this.isIsland = this.neighbours.length == 0 ? true : false;
+		return this.isIsland;
+	},
 };
 
 console.log(nativeCountry.describe());
 console.log(nativeCountry.checkIsland());
 console.log(nativeCountry.isIsland);
+
+// LECTURE: Looping Arrays, Breaking and Continuing
+// 1. Let's bring back the 'populations' array from a previous assignment
+// 2. Use a for loop to compute an array called 'percentages2' containing the
+// percentages of the world population for the 4 population values. Use the
+// function 'percentageOfWorld1' that you created earlier
+// 3. Confirm that 'percentages2' contains exactly the same values as the
+// 'percentages' array that we created manually in the previous assignment,
+// and reflect on how much better this solution i
+
+let percentages2 = [];
+
+for (let i = 0; i < populations.length; i++) {
+	percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+console.log(percentages2);
+
+// LECTURE: Looping Backwards and Loops in Loops
+// 1. Store this array of arrays into a variable called 'listOfNeighbours'
+// [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden',
+// 'Russia']];
+// 2. Log only the neighbouring countries to the console, one by one, not the entire
+// arrays. Log a string like 'Neighbour: Canada' for each country
+// 3. You will need a loop inside a loop for this. This is actually a bit tricky, so don't
+// worry if it's too difficult for you! But you can still try to figure this out anyway
+
+let listOfNeighbours = [["Canada", "Mexico"], ["Spain"], ["Norway", "Sweden", "Ukraine"]];
+for (let i = 0; i < listOfNeighbours.length; i++) {
+	for (let j = 0; j < listOfNeighbours[i].length; j++) {
+		console.log(`Neighbour: ${listOfNeighbours[i][j]}`);
+	}
+}
